@@ -83,19 +83,23 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
-app.get('/aboutus', async (req, res) => {
-  try{
-    res.json({
-      myName: "Jasmine Fan",
-      aboutParagraph: ["Hi! I'm Jasmine! I'm currently a senior majoring in Computer Science.",
+app.get('/about', async (req, res) => {
+  const paragraph1 = ["Hi! I'm Jasmine! I'm currently a senior majoring in Computer Science.",
                       " I have four minors: Web Programming and Applications, Digital Art and Design, Chinese, and Interactive Media Arts.",
                       " The only reason I have so many is because over the summer, IMA had opened up their minor to every school in NYU, as IMA was my past major, I obviously already fulfilled all the requirements for the minor.",
                       " Another fun fact about me is that I have a pet chicken named Noir— unsuprisingly, my favorite animals are also birds.",
                       " Currently, I'm aiming to become a Full Stack developer— I love building software but hate research.",
-                      " In my free time, I love to draw, go to bookstores, or talk a walk around New York with no destination in mind.",
-                      `\nI also really enjoy fighting games such as GBVSR, Street Fighter 6, and Guilty Gear, but I haven't been playing recently due to graduate school applications coming up.`,
+                      " In my free time, I love to draw, go to bookstores, or talk a walk around New York with no destination in mind."
+                      ]
+
+  const paragraph2 = ["I also really enjoy fighting games such as GBVSR, Street Fighter 6, and Guilty Gear, but I haven't been playing recently due to graduate school applications coming up.",
                       " Also, I'm from California! A lot of people I meet over here are from the Bay Area, however I'm from a place close to LA.",
-                      " Really looking forward to getting into the meat of this class!"],
+                      " Really looking forward to getting into the meat of this class!"]
+  try{
+    return res.json({
+      myName: "Jasmine Fan",
+      aboutParagraph1: paragraph1.join(' '),
+      aboutParagraph2: paragraph2.join(' '),
       myImage: "http://localhost:7002/IMG_4855.jpg"
     })
   } catch (err) {
