@@ -24,7 +24,7 @@ const { User } = require('./models/User')
 
 // image is in front-end public folder
 const path = require('path')
-app.use('/static', express.static(path.join(__dirname, '../frontend/public')))
+app.use(express.static(path.join(__dirname, '../frontend/public')))
 
 
 // a route to handle fetching all messages
@@ -96,7 +96,7 @@ app.get('/aboutus', async (req, res) => {
                       `\nI also really enjoy fighting games such as GBVSR, Street Fighter 6, and Guilty Gear, but I haven't been playing recently due to graduate school applications coming up.`,
                       " Also, I'm from California! A lot of people I meet over here are from the Bay Area, however I'm from a place close to LA.",
                       " Really looking forward to getting into the meat of this class!"],
-      myImage: "http://localhost:7002/static/IMG_4855.jpg"
+      myImage: "http://localhost:7002/IMG_4855.jpg"
     })
   } catch (err) {
     console.error(err)
